@@ -156,7 +156,7 @@ module Fastlane
         body = {
           title: deploy_key_title,
           key: k.ssh_public_key,
-          read_only: !params[:writable_deploy_key]
+          read_only: false
         }
         post_deploy_key_resp = self.match_repo_post(params, "/keys", body)
         UI.message("Created Deploy Key")
